@@ -7,7 +7,7 @@ This website is designed to:
 - Host and display a documentary on digital and organic farming.
 - Provide users with interactive tools, such as:
 	- A timeline to explore the history and evolution of farming practices.
-	- A map to highlight significant locations related to the documentary.
+	- A map to highlight significant locations with certain digital solutions in farming.
 - Allow viewers to comment on the documentary via a database-powered comments section.
 - Enable direct communication with the creator through a working email contact form
 
