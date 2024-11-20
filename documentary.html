@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Agnes Kvarnsbacke">
+    <title>Dokumentären – Framtidens Jordbruk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav class="navigationBar">
+        <a href="index.php" id="homeLink">Start</a>
+        <a href="documentary.php" id="documentaryLink">Se Dokumentären</a>
+        <a href="timeline.html" id="timelineLink">Upptäck Tidslinjen</a>
+        <a href="map.html" id="mapLink">Upptäck Kartan</a>
+        <a href="references.html" id="readingLink">Vidare Läsning</a>
+        <a href="about.html" id="aboutLink">Om</a>
+    </nav>
+</header>
+<main>
+    <section id="content">
+        <section>
+            <h2>Hållbart Jordbruk i vår digitala tidsålder</h2>
+            <p>Upptäck mötet mellan teknologi och natur i min dokumentär. Utforska historien och framtidens jordbruk, där
+                fjärranalysteknik och ekologiskt jordbruk samarbetar för att skapa en hållbar matproduktion. Ta del av
+                berättelsen om hur dessa två synsätt kan samarbeta för att rädda vår planet. Det är en resa mot en mer
+                produktiv och miljövänlig framtid för oss alla.</p>
+            <section id="iframe">
+                <iframe src="https://www.youtube.com/embed/T_kqVuWJooc" allowfullscreen></iframe>
+            </section>
+            <br><hr>
+        </section>
+        <section id="form">
+            <p>Efter att ha tittat på dokumentären får du gärna svara på ett par frågor i följande formulär!</p>
+            <button onclick="window.open('https://forms.gle/doE9JiYJ3Rx8T88LA', '_blank');">
+                Klicka här för att komma till formuläret
+            </button>
+            <br><br><hr>
+        </section>
+        <section>
+            <h2>Filminformation</h2>
+            <p><b>Dokumentärtitel: </b>Hållbart Jordbruk i vår digitala tidsålder</p>
+            <p><b>Regissör: </b>Agnes Kvarnsbacke</p>
+            <p><b>Produktionsår: </b>2023</p>
+            <p><b>Beskrivning:</b><br>Min dokumentär, "Hållbart Jordbruk i vår digitala tidsålder," tar oss med på en
+                intressant resa in i framtidens jordbruk, där teknologi och ekologi kombineras för att skapa en mer
+                hållbar planet. Genom användningen av fjärranalysteknik och ekologiskt jordbruk undersöker jag lösningar
+                på de utmaningar som det moderna jordbruket står inför. <br><br>I dokumentären granskar jag jordbrukets
+                historia, identifierar de problem som det moderna jordbruket står inför och utforskar hur avancerade
+                teknologier har påverkat situationen. Genom inspirerande berättelser från jordbrukare som är öppna för
+                en digital framtid i jordbruket, belyser jag hur samarbetet mellan teknologi och ekologi kan skapa en
+                balans mellan produktivitet och miljöbevarande.<br><br>Målet med dokumentären är att motivera tittare
+                att förstå sitt eget ansvar och engagemang för en hållbar framtid. Tillsammans kan vi skapa en värld
+                där jordbruket spelar en central roll i att upprätthålla ekosystemet och vårda vår värdefulla planet
+                för framtida generationer.</p>
+            <br><hr>
+        </section>
+    </section>
+    <section>
+        <section>
+            <h2>Kommentarer</h2>
+            <!--===entries===-->
+            <section id="comments">
+                <p><strong>Inlägg:</strong> ---no---</p>
+                <p>
+                    <strong>Tid:</strong> ---time---<br />
+                    <strong>Från:</strong> ---name---<br />
+                </p>
+                <p><strong>Kommentar:</strong> ---comment---</p>
+            </section>
+            <!--===entries===-->
+            <br><hr><br>
+        </section>
+        <section id="comment_section" class="form_section">
+            <h2>Lämna en kommentar</h2>
+            <form method="post" action="documentary.php">
+
+                <label for="comment_author" class="required">Ditt namn:</label><br>
+                <input type="text" id="comment_author" name="comment_author" value="" required="required"><br>
+
+                <label for="comment" class="required">Din kommentar:</label><br>
+                <textarea name="comment" id="comment" required="required"></textarea><br>
+
+                <input type="submit" value="Skicka">
+            </form>
+            <br>
+        </section>
+    </section>
+</main>
+<footer>
+    <p>Copyright © 2023 Agnes Kvarnsbacke</p>
+</footer>
+</body>
+</html>

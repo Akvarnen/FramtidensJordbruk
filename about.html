@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Agnes Kvarnsbacke">
+    <title>Om – Framtidens Jordbruk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav class="navigationBar">
+        <a href="index.php" id="homeLink">Start</a>
+        <a href="documentary.php" id="documentaryLink">Se Dokumentären</a>
+        <a href="timeline.html" id="timelineLink">Upptäck Tidslinjen</a>
+        <a href="map.html" id="mapLink">Upptäck Kartan</a>
+        <a href="references.html" id="readingLink">Vidare Läsning</a>
+        <a href="about.html" id="aboutLink">Om</a>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Om Hemsidan</h2>
+        <p>Denna hemsida skapades som ett sammanslaget projekt i kurserna 'Webbutveckling II' och 'Projektarbete i Digitala
+        Medier'. Hemsidan är slutprojektet för den förstnämnda kursen och ett ställe att visa upp min interaktiva
+        dokumentär på för den andra kursen. Några av sidorna kommer att sakna funktionalitet på grund av kursen PADME's
+        längre varaktighet. Hemsidan kommer alltså att uppdateras under tidens gång.</p>
+    </section>
+    <section>
+        <h2>Om Mig</h2>
+        <p>Jag heter Agnes Kvarnsbacke och är student på Stockholms Universitet. Jag har alltid haft ett stort intresse för
+        naturen och djurvärlden. Under min barndom tillbringade jag många år på ridskola innan jag blev allergisk mot
+        pälsdjur och behövde sluta. Trots detta har mitt engagemang för djur aldrig slocknat. Min kärlek för naturen
+        återspeglas även i mitt intresse för att plantera blommor. Att se mina blommor blomstra ger mig en enorm glädje.</p>
+        <p>En annan sysselsättning som jag hänger mig åt är skrivandet. Jag är mycket förtjust i att skapa egna
+        berättelser med färgrika världar och komplexa karaktärer. Skrivandet är mitt sätt att uttrycka mig och dela
+        mina tankar och idéer med andra. Bortsett från att skriva tycker jag mycket om att både läsa böcker och spela
+        TV-spel.</p>
+    </section>
+    <section class="form_section">
+        <h2>Kontakta mig</h2>
+        <p>Kontakta mig för frågor och liknande som gäller dokumentären eller hemsidan.</p>
+        <form method="post" enctype="multipart/form-data" action="email_management.php">
+            <input type="text" name="from" placeholder="Från" required="required"><br>
+            <input type="text" name="subject" placeholder="Ärende" required="required"><br>
+            <textarea name="message" rows="10" cols="25" placeholder="Meddelande"></textarea><br>
+            <p><input type="submit" name="push_button" value="Skicka"/></p><br>
+        </form>
+    </section>
+    <section id="response">
+        <p id="message-placeholder"></p>
+    </section>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+        if (message) {
+            document.getElementById('message-placeholder').textContent = decodeURIComponent(message);
+        }
+    </script>
+</main>
+<footer>
+    <p>Copyright © 2023 Agnes Kvarnsbacke</p>
+</footer>
+</body>
+</html>
