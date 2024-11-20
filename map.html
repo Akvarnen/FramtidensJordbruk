@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Agnes Kvarnsbacke">
+    <title>Kartan – Framtidens Jordbruk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <nav class="navigationBar">
+        <a href="index.php" id="homeLink">Start</a>
+        <a href="documentary.php" id="documentaryLink">Se Dokumentären</a>
+        <a href="timeline.html" id="timelineLink">Upptäck Tidslinjen</a>
+        <a href="map.html" id="mapLink">Upptäck Kartan</a>
+        <a href="references.html" id="readingLink">Vidare Läsning</a>
+        <a href="about.html" id="aboutLink">Om</a>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Interaktiv Karta: Jordbrukets Teknologier</h2>
+        <p>Upptäck jordbruksteknologins globala mångfald. Utforska olika teknologier och metoder som används över hela
+            världen för att odla och hantera grödor. Se hur digitala innovationer har tagit jordbruket till nya höjder
+            och förstå hur dessa teknologier påverkar vår matförsörjning och miljön.</p><br>
+        <p>Utforska det globala jordbruket med en interaktiv karta som visar olika digitala
+            jordbruksmetoder över hela världen. Klicka på markörerna för att upptäcka unika metoder, från
+            precisionsodling i USA till vertikal odling i Japan. Kartan ger en inblick i hur tekniken formar hållbara
+            och effektiva jordbruksmetoder på global nivå.</p>
+    </section>
+    <section>
+        <section  id="map">
+            <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap" async defer></script>
+            <script>
+                function initMap() {
+                    const options = {
+                        zoom: 2.2,
+                        center: {lat: 20, lng: 0}
+                    }
+
+                    const map = new google.maps.Map(document.getElementById('map'), options);
+
+                    function addMarker(coordinates, content) {
+                        const marker = new google.maps.Marker({position: coordinates, map: map});
+
+                        const infoWindow = new google.maps.InfoWindow({content: content})
+
+                        google.maps.event.addListener(marker, 'click', function() {infoWindow.open(map, marker);});
+                    }
+
+                    let text_usa = "<h1>USA</h1><p><b>Teknik som används:</b> GPS, sensorer, drönare</p>" +
+                        "<p><b>Beskrivning:</b> Precisionsodling innebär att man använder GPS-teknik för att exakt " +
+                        "hantera fältvariationer inom växtodling. Jordbrukare använder sensorer och drönare för att " +
+                        "övervaka grödornas hälsa, bedöma markförhållandena och applicera insatsmedel som vatten och " +
+                        "gödningsmedel mer exakt. I USA används detta i stor utsträckning, särskilt för storskaliga " +
+                        "råvaror som majs och sojabönor.";
+                    let text_japan = "<h1>Japan</h1><p><b>Teknik som används:</b> Kontrollerad Miljöjordbruk (CEA), IoT</p>" +
+                        "<p><b>Beskrivning:</b> Japan, med sin begränsade odlingsbara mark, har varit en föregångare " +
+                        "inom vertikalt jordbruk. Vertikala odlingar använder kontrollerade miljöer med artificiellt " +
+                        "ljus, temperatur- och luftfuktighetskontroll för att odla grödor inomhus. Detta möjliggör " +
+                        "produktion året runt i stadsområden.";
+                    let text_europe = "<h1>Europa</h1><p><b>Teknik som används:</b> RFID, Sensorer</p>" +
+                        "<p><b>Beskrivning:</b> Precisionsuppfödning innebär att man använder teknik för att övervaka " +
+                        "och hantera boskap. I Europa använder lantbrukare RFID-taggar och sensorer för att spåra " +
+                        "enskilda djurs hälsa, beteende och produktivitet. Detta möjliggör en mer målinriktad och " +
+                        "effektiv hantering av boskapen.";
+                    let text_china = "<h1>Kina</h1><p><b>Teknik som används:</b> Fjärranalys, Dataanalys</p>" +
+                        "<p><b>Beskrivning:</b> Kina har tillämpat digitalt jordbruk inom risodling. Fjärranalysteknik " +
+                        "i kombination med dataanalys används för att övervaka risfälten. Detta hjälper jordbrukarna " +
+                        "att optimera vattenhantering, skadedjursbekämpning och gödsling för ökad avkastning.";
+                    let text_brazil = "<h1>Brasilien</h1><p><b>Teknik som används:</b> Drönare, GIS</p>" +
+                        "<p><b>Beskrivning:</b> Brasilien har börjat använda drönare för storskaligt jordbruk. Drönare " +
+                        "utrustade med kameror och sensorer används för att övervaka grödornas hälsa, bedöma " +
+                        "fältförhållandena och skapa detaljerade kartor. Denna information hjälper jordbrukare att " +
+                        "fatta datadrivna beslut om skötsel av grödor.";
+                    let text_africa = "<h1>Afrika</h1><p><b>Teknik som används:</b> Mobilappar, SMS</p>" +
+                        "<p><b>Beskrivning:</b> I delar av Afrika utnyttjas mobiltelefonteknik för att ge information " +
+                        "och stöd till småskaliga jordbrukare. Mobilappar och SMS-tjänster ger väderprognoser, " +
+                        "marknadspriser och jordbruksrådgivning, vilket hjälper jordbrukarna att fatta välgrundade " +
+                        "beslut.";
+
+                    addMarker({lat: 39.924685, lng: -98.525126}, text_usa);
+                    addMarker({lat: 36.125698, lng: 138.532360}, text_japan);
+                    addMarker({lat: 54.772876, lng: 14.746570}, text_europe);
+                    addMarker({lat: 35.203408, lng: 103.621402}, text_china);
+                    addMarker({lat: -6.803593, lng: -55.802518}, text_brazil);
+                    addMarker({lat: 8.922887, lng: 22.117847}, text_africa);
+                }
+            </script>
+        </section>
+    </section>
+
+</main>
+<footer>
+    <p>Copyright © 2023 Agnes Kvarnsbacke</p>
+</footer>
+</body>
+</html>
